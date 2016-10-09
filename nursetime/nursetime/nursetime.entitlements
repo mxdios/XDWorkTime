@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.inspriy.nursetimetoday</string>
+		<string>group.com.inspriy.nursetime</string>
 	</array>
 </dict>
 </plist>

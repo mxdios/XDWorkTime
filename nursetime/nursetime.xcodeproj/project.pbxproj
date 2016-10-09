@@ -60,6 +60,9 @@
 		5FBDF20D1C1DA7540083CD9A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDF1FC1C1DA7540083CD9A /* UIImageView+WebCache.m */; };
 		5FBDF20E1C1DA7540083CD9A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDF1FE1C1DA7540083CD9A /* UIView+WebCacheOperation.m */; };
 		C2064D401C1E9B470050487D /* NTWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2064D3F1C1E9B470050487D /* NTWeatherView.m */; };
+		C216DA0E1DAA17660079BF33 /* NTTodayCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C216DA0D1DAA17660079BF33 /* NTTodayCalendarView.m */; };
+		C216DA111DAA188E0079BF33 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = C216DA101DAA188E0079BF33 /* UIView+Frame.m */; };
+		C216DA141DAA1B4D0079BF33 /* NSDate+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C216DA131DAA1B4D0079BF33 /* NSDate+extend.m */; };
 		C23C52C01BD8DBE20092C509 /* NTSelectDutyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C52BF1BD8DBE20092C509 /* NTSelectDutyView.m */; };
 		C23C52C31BD8DC030092C509 /* NTSelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C52C21BD8DC030092C509 /* NTSelectTimeView.m */; };
 		C29A731B1C213A240072EDB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29A731A1C213A240072EDB5 /* CoreLocation.framework */; };
@@ -255,6 +258,12 @@
 		C2064D3E1C1E9B470050487D /* NTWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTWeatherView.h; sourceTree = "<group>"; };
 		C2064D3F1C1E9B470050487D /* NTWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTWeatherView.m; sourceTree = "<group>"; };
 		C216DA0B1DA9EC980079BF33 /* NTTodayViewController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NTTodayViewController.entitlements; sourceTree = "<group>"; };
+		C216DA0C1DAA17660079BF33 /* NTTodayCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTodayCalendarView.h; sourceTree = "<group>"; };
+		C216DA0D1DAA17660079BF33 /* NTTodayCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTodayCalendarView.m; sourceTree = "<group>"; };
+		C216DA0F1DAA188E0079BF33 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		C216DA101DAA188E0079BF33 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		C216DA121DAA1B4D0079BF33 /* NSDate+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+extend.h"; sourceTree = "<group>"; };
+		C216DA131DAA1B4D0079BF33 /* NSDate+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+extend.m"; sourceTree = "<group>"; };
 		C23C52BE1BD8DBE20092C509 /* NTSelectDutyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSelectDutyView.h; sourceTree = "<group>"; };
 		C23C52BF1BD8DBE20092C509 /* NTSelectDutyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSelectDutyView.m; sourceTree = "<group>"; };
 		C23C52C11BD8DC030092C509 /* NTSelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSelectTimeView.h; sourceTree = "<group>"; };
@@ -605,9 +614,15 @@
 		C2C6013D1DA8C9AF0074D5F0 /* NTTodayViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C216DA121DAA1B4D0079BF33 /* NSDate+extend.h */,
+				C216DA131DAA1B4D0079BF33 /* NSDate+extend.m */,
+				C216DA0F1DAA188E0079BF33 /* UIView+Frame.h */,
+				C216DA101DAA188E0079BF33 /* UIView+Frame.m */,
 				C216DA0B1DA9EC980079BF33 /* NTTodayViewController.entitlements */,
 				C2C6013E1DA8C9AF0074D5F0 /* TodayViewController.h */,
 				C2C6013F1DA8C9AF0074D5F0 /* TodayViewController.m */,
+				C216DA0C1DAA17660079BF33 /* NTTodayCalendarView.h */,
+				C216DA0D1DAA17660079BF33 /* NTTodayCalendarView.m */,
 				C2C601441DA8C9AF0074D5F0 /* Info.plist */,
 			);
 			path = NTTodayViewController;
@@ -953,10 +968,10 @@
 					C2C601381DA8C9AF0074D5F0 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 775V7Y38FR;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1041,6 +1056,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C216DA141DAA1B4D0079BF33 /* NSDate+extend.m in Sources */,
+				C216DA111DAA188E0079BF33 /* UIView+Frame.m in Sources */,
+				C216DA0E1DAA17660079BF33 /* NTTodayCalendarView.m in Sources */,
 				C2C601401DA8C9AF0074D5F0 /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1172,16 +1190,17 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetimetoday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.NTTodayViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d68e3926-0d79-4fad-b40a-b37353d9fe71";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1193,16 +1212,17 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetimetoday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.NTTodayViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d68e3926-0d79-4fad-b40a-b37353d9fe71";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

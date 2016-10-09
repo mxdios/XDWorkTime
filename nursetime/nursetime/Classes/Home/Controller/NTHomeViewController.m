@@ -203,8 +203,8 @@
         writeVc.timeStr = timeStr;
         [self.navigationController pushViewController:writeVc animated:YES];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"记录%@的事项", timeStr] message:@"使用记录事项功能,需要登录" delegate:self cancelButtonTitle:@"暂不需要" otherButtonTitles:@"去登录", nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"记录%@的事项", timeStr] message:@"使用记录事项功能,需要登录" delegate:self cancelButtonTitle:@"暂不需要" otherButtonTitles:@"去登录", nil];
+//        [alert show];
     }
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

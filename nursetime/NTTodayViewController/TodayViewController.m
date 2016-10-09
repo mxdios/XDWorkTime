@@ -8,10 +8,11 @@
 
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
+#import "NTTodayCalendarView.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 {
-    UIButton *_contentView;
+    NTTodayCalendarView *_calendarView;
 }
 @end
 
@@ -20,24 +21,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
-    
-    _contentView = [[UIButton alloc] initWithFrame:self.view.bounds];
-    _contentView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_contentView];
-    [_contentView addTarget:self action:@selector(openApp) forControlEvents:UIControlEventTouchUpInside];
+        
+//    _contentView = [[UIButton alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:_contentView];
+//    [_contentView addTarget:self action:@selector(openApp) forControlEvents:UIControlEventTouchUpInside];
     
     
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openApp)];
-//    [_contentView addGestureRecognizer:tap];
-//    [self.view addGestureRecognizer:tap];
-    
+    _calendarView = [[NTTodayCalendarView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_calendarView];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openApp)];
+    [_calendarView addGestureRecognizer:tap];
+    [self.view addGestureRecognizer:tap];
+
     
 #ifdef __IPHONE_10_0 //因为是iOS10才有的，还请记得适配
     //如果需要折叠
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
 #endif
+    
+//    self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 400);
+
+}
+- (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize
+{
+    if (activeDisplayMode == NCWidgetDisplayModeCompact) {
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
+    } else {
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 400);
+    }
 }
 //
 - (void)openApp

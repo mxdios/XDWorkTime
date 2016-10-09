@@ -192,6 +192,10 @@ static const NSInteger kTotalNum = (kRow - 1) * kCol;
         [userDefaults setValue:tags forKey:@"selectTagArrayKey"];
         [userDefaults synchronize];
         
+        NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.inspriy.nursetime"];
+        [shared setObject:[NSDictionary dictionaryWithObjectsAndKeys:dutyArray, @"dutyArrayKey", selectDayStr, @"selectDayStrKey", tags, @"selectTagArrayKey", nil] forKey:@"todayViewShared"];
+        [shared synchronize];
+        
     } else {
         //在本地找
         dutyArray = [userDefaults mutableArrayValueForKey:@"dutyArrayKey"];
