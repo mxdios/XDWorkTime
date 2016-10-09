@@ -108,6 +108,8 @@
 		C2E1A8E81C229596002BD4C2 /* NTDiaryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E1A8E71C229596002BD4C2 /* NTDiaryListViewController.m */; };
 		C2E1A8EB1C22993D002BD4C2 /* NTWriteDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E1A8EA1C22993D002BD4C2 /* NTWriteDiaryViewController.m */; };
 		C2E1A8EE1C22A358002BD4C2 /* NTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E1A8ED1C22A358002BD4C2 /* NTTextView.m */; };
+		C2E557441DAA3D700086F78B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6013B1DA8C9AF0074D5F0 /* NotificationCenter.framework */; };
+		C2E5574F1DAA3D700086F78B /* ddd.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2E557431DAA3D700086F78B /* ddd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2FF66491C23DFC3000762E7 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FF66481C23DFC3000762E7 /* NSString+Hash.m */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,13 @@
 			remoteGlobalIDString = C2DE93F91BD76CE7009B3D70;
 			remoteInfo = nursetime;
 		};
+		C2E5574D1DAA3D700086F78B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2DE93F21BD76CE7009B3D70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2E557421DAA3D700086F78B;
+			remoteInfo = ddd;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +152,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C2C601471DA8C9AF0074D5F0 /* NTTodayViewController.appex in Embed App Extensions */,
+				C2E5574F1DAA3D700086F78B /* ddd.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +352,7 @@
 		C2E1A8EA1C22993D002BD4C2 /* NTWriteDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTWriteDiaryViewController.m; sourceTree = "<group>"; };
 		C2E1A8EC1C22A358002BD4C2 /* NTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTextView.h; sourceTree = "<group>"; };
 		C2E1A8ED1C22A358002BD4C2 /* NTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTextView.m; sourceTree = "<group>"; };
+		C2E557431DAA3D700086F78B /* ddd.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ddd.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FF66471C23DFC3000762E7 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		C2FF66481C23DFC3000762E7 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -387,6 +398,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E557401DAA3D700086F78B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E557441DAA3D700086F78B /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +666,7 @@
 				C2DE94131BD76CE7009B3D70 /* nursetimeTests.xctest */,
 				C2DE941E1BD76CE7009B3D70 /* nursetimeUITests.xctest */,
 				C2C601391DA8C9AF0074D5F0 /* NTTodayViewController.appex */,
+				C2E557431DAA3D700086F78B /* ddd.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -914,6 +934,7 @@
 			);
 			dependencies = (
 				C2C601461DA8C9AF0074D5F0 /* PBXTargetDependency */,
+				C2E5574E1DAA3D700086F78B /* PBXTargetDependency */,
 			);
 			name = nursetime;
 			productName = nursetime;
@@ -956,6 +977,23 @@
 			productReference = C2DE941E1BD76CE7009B3D70 /* nursetimeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C2E557421DAA3D700086F78B /* ddd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2E557501DAA3D700086F78B /* Build configuration list for PBXNativeTarget "ddd" */;
+			buildPhases = (
+				C2E5573F1DAA3D700086F78B /* Sources */,
+				C2E557401DAA3D700086F78B /* Frameworks */,
+				C2E557411DAA3D700086F78B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ddd;
+			productName = ddd;
+			productReference = C2E557431DAA3D700086F78B /* ddd.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -993,6 +1031,11 @@
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = C2DE93F91BD76CE7009B3D70;
 					};
+					C2E557421DAA3D700086F78B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 775V7Y38FR;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = C2DE93F51BD76CE7009B3D70 /* Build configuration list for PBXProject "nursetime" */;
@@ -1012,6 +1055,7 @@
 				C2DE94121BD76CE7009B3D70 /* nursetimeTests */,
 				C2DE941D1BD76CE7009B3D70 /* nursetimeUITests */,
 				C2C601381DA8C9AF0074D5F0 /* NTTodayViewController */,
+				C2E557421DAA3D700086F78B /* ddd */,
 			);
 		};
 /* End PBXProject section */
@@ -1043,6 +1087,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C2DE941C1BD76CE7009B3D70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E557411DAA3D700086F78B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1162,6 +1213,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2E5573F1DAA3D700086F78B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1179,6 +1237,11 @@
 			isa = PBXTargetDependency;
 			target = C2DE93F91BD76CE7009B3D70 /* nursetime */;
 			targetProxy = C2DE941F1BD76CE7009B3D70 /* PBXContainerItemProxy */;
+		};
+		C2E5574E1DAA3D700086F78B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2E557421DAA3D700086F78B /* ddd */;
+			targetProxy = C2E5574D1DAA3D700086F78B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1409,6 +1472,44 @@
 			};
 			name = Release;
 		};
+		C2E557511DAA3D700086F78B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				DEVELOPMENT_TEAM = 775V7Y38FR;
+				INFOPLIST_FILE = ddd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.ddd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C2E557521DAA3D700086F78B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				DEVELOPMENT_TEAM = 775V7Y38FR;
+				INFOPLIST_FILE = ddd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.ddd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1456,6 +1557,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C2E557501DAA3D700086F78B /* Build configuration list for PBXNativeTarget "ddd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E557511DAA3D700086F78B /* Debug */,
+				C2E557521DAA3D700086F78B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

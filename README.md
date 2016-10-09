@@ -33,9 +33,118 @@ Apple直到iOS8才加入窗口小部件，而且可自定义程度远远没有An
 
 ### 创建widget
 
+widget可以理解为一个独立的项目，虽然形式上看来像是附属于app的一部分功能，其实并不是，widget想获取app的数据，还需要做数据共享。
+
 File -> New -> Target
 
-|:---:|:---:|
-|![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/2016-10-094.36.08.png?raw=true)|![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/2016-10-094.40.27.png?raw=true)|
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/2016-10-094.36.08.png?raw=true)
 
+选择iOS里的Today Extension
+
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/2016-10-094.40.27.png?raw=true)
+
+习惯使用纯代码布局，喜欢用storyboard的略过。在新创建的widget项目文件夹中删除MainInterface.storyboard，修改info.plist如下内容
+
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/QQ20161009-0.png?raw=true)
+
+确定将原来的key-value:`NSExtensionMainStoryboard` `MainInterface`修改为`NSExtensionPrincipalClass` `TodayViewController`。`TodayViewController`是自定义的控制器名字。
+
+### widget折叠
+
+iOS10之后才有的widget折叠。
+
+```Objective-C
+#ifdef __IPHONE_10_0
+    //需要折叠
+    self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+#endif
+```
+
+实现下面方法。
+
+```Objective-C
+- (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize {
+    if (activeDisplayMode == NCWidgetDisplayModeCompact) {
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
+    } else {
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 400);
+    }
+}
+```
+
+### 点击widget开启app
+
+在app的`TARGEST`里的`info`下`URL Types`添加`URL Schemes`
+
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/QQ20161009-1.png?raw=true)
+
+widget上显示的自定义view：`_calendarView`，给`_calendarView`添加触摸事件。
+
+```Objective-C
+UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openApp)];
+[_calendarView addGestureRecognizer:tap];
+```
+
+实现触摸事件，开启app
+
+```Objective-C
+- (void)openApp {
+    [self.extensionContext openURL:[NSURL URLWithString:@"paibanapp://"] completionHandler:^(BOOL success) {
+        NSLog(@"successs = %d", success);
+    }];
+}
+```
+
+### 数据共享
+
+创建App Groups的Identifiers。在创建证书的时候勾选App Groups，设置创建的App Groups
+
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/QQ20161009-3.png?raw=true)
+
+在Xcode的`TARGEST` -> `Capabilities`里打开App Groups。
+
+![img](https://github.com/mxdios/notebook/blob/master/notebooks/images/QQ20161009-2.png?raw=true)
+
+#### 用NSUserDefaults共享数据，
+
+存储数据
+
+```Objective-C
+NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.inspriy.nursetime"];
+[shared setObject:[NSDictionary dictionaryWithObjectsAndKeys:dutyArray, @"dutyArrayKey", selectDayStr, @"selectDayStrKey", tags, @"selectTagArrayKey", nil] forKey:@"todayViewShared"];
+[shared synchronize];
+```
+
+读取数据
+
+```Objective-C
+NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.inspriy.nursetime"];
+NSDictionary *dict = [NSDictionary dictionaryWithDictionary:[shared objectForKey:@"todayViewShared"]];
+```
+
+#### 用NSFileManager共享数据
+
+存储数据
+
+```Objective-C
+NSError *err = nil;
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.inspriy.nursetime"];
+containerURL = [containerURL URLByAppendingPathComponent:@"Library/Caches/widget"];
+NSDictionary *value = [NSDictionary dictionaryWithObjectsAndKeys:dutyArray, @"dutyArrayKey", selectDayStr, @"selectDayStrKey", tags, @"selectTagArrayKey", nil];
+BOOL result = [value writeToURL:containerURL atomically:YES encoding:NSUTF8StringEncoding error:&err];
+if (!result) {
+	NSLog(@"%@",err);
+} else {
+	NSLog(@"save value:%@ success.",value);
+}
+```
+
+读取数据
+
+```Objective-C
+NSError *err = nil;
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.inspriy.nursetime"];
+containerURL = [containerURL URLByAppendingPathComponent:@"Library/Caches/widget"];
+NSString *value = [NSString stringWithContentsOfURL:containerURL encoding: NSUTF8StringEncoding error:&err];
+```
 
