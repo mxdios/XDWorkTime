@@ -92,13 +92,14 @@
     bUser.password = [[NSString stringWithFormat:@"%@%@",_passWord.text, keyMD5] md5String];
     NTLog(@"加密 = %@", [[NSString stringWithFormat:@"%@%@",_passWord.text, keyMD5] md5String]);
     bUser.email = _phoneNum.text;
+    __weak typeof(self)weakSelf = self;
     [bUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
         NTLog(@"is  %d  错误 = %@ 错误码= %ld", isSuccessful, error, error.code);
         if (isSuccessful) {
             [MBProgressHUD showText:@"注册成功"];
             [BmobUser loginInbackgroundWithAccount:_nameText.text andPassword:[[NSString stringWithFormat:@"%@%@",_passWord.text, keyMD5] md5String] block:^(BmobUser *user, NSError *error) {
                 NTLog(@"登录 = %@", error);
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 if (error) {
                     [MBProgressHUD showText:@"请登录"];
                 } else {
@@ -109,6 +110,8 @@
             [MBProgressHUD showText:@"此用户名已存在"];
         } else if (203 == error.code) {
             [MBProgressHUD showText:@"此邮箱已注册"];
+        } else {
+            [MBProgressHUD showText:@"注册失败"];
         }
     }];
 }

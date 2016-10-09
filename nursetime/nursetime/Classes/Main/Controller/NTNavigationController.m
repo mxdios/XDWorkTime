@@ -31,7 +31,8 @@
 + (void)setupNavigation
 {
     UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar dz_setBackgroundColor:NTBlue];
+//    [navBar dz_setBackgroundColor:NTBlue];
+    navBar.barTintColor = NTBlue;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[NSForegroundColorAttributeName] = [UIColor whiteColor];
 //    navBar.tintColor = [UIColor whiteColor];
