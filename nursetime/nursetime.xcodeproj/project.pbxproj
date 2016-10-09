@@ -968,7 +968,7 @@
 					C2C601381DA8C9AF0074D5F0 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 775V7Y38FR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -978,7 +978,7 @@
 					C2DE93F91BD76CE7009B3D70 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 775V7Y38FR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1192,15 +1192,15 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.NTTodayViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "57ecbb5b-bd7f-43ee-a2b5-8ac5ea3e9dea";
+				PROVISIONING_PROFILE_SPECIFIER = mxdworktimetodaydis;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1214,15 +1214,15 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime.NTTodayViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "57ecbb5b-bd7f-43ee-a2b5-8ac5ea3e9dea";
+				PROVISIONING_PROFILE_SPECIFIER = mxdworktimetodaydis;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1315,8 +1315,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = nursetime/nursetime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 晓东 苗 (5TN5F53RQA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1329,8 +1329,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c6fd452e-b4ff-4920-bfc1-0cacc88987f9";
+				PROVISIONING_PROFILE_SPECIFIER = mxdworktimedis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1341,8 +1341,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = nursetime/nursetime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 晓东 苗 (5TN5F53RQA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1355,8 +1355,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspriy.nursetime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c6fd452e-b4ff-4920-bfc1-0cacc88987f9";
+				PROVISIONING_PROFILE_SPECIFIER = mxdworktimedis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
