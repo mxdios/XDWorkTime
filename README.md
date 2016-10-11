@@ -110,7 +110,7 @@ UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:sel
 存储数据
 
 ```Objective-C
-NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.inspriy.nursetime"];
+NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.xxxx"];//App Groups ID
 [shared setObject:[NSDictionary dictionaryWithObjectsAndKeys:dutyArray, @"dutyArrayKey", selectDayStr, @"selectDayStrKey", tags, @"selectTagArrayKey", nil] forKey:@"todayViewShared"];
 [shared synchronize];
 ```
@@ -118,7 +118,7 @@ NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.i
 读取数据
 
 ```Objective-C
-NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.inspriy.nursetime"];
+NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.xxxx"];//App Groups ID
 NSDictionary *dict = [NSDictionary dictionaryWithDictionary:[shared objectForKey:@"todayViewShared"]];
 ```
 
@@ -128,7 +128,7 @@ NSDictionary *dict = [NSDictionary dictionaryWithDictionary:[shared objectForKey
 
 ```Objective-C
 NSError *err = nil;
-NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.inspriy.nursetime"];
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.xxxx"];//App Groups ID
 containerURL = [containerURL URLByAppendingPathComponent:@"Library/Caches/widget"];
 NSDictionary *value = [NSDictionary dictionaryWithObjectsAndKeys:dutyArray, @"dutyArrayKey", selectDayStr, @"selectDayStrKey", tags, @"selectTagArrayKey", nil];
 BOOL result = [value writeToURL:containerURL atomically:YES encoding:NSUTF8StringEncoding error:&err];
@@ -143,7 +143,7 @@ if (!result) {
 
 ```Objective-C
 NSError *err = nil;
-NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.inspriy.nursetime"];
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.xxxx"];//App Groups ID
 containerURL = [containerURL URLByAppendingPathComponent:@"Library/Caches/widget"];
 NSString *value = [NSString stringWithContentsOfURL:containerURL encoding: NSUTF8StringEncoding error:&err];
 ```
