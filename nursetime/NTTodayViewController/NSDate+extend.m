@@ -90,6 +90,13 @@
     return [components year];
 }
 
+- (NSInteger)week {
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorian components:NSCalendarUnitWeekday fromDate:self];
+    return [components weekday];
+}
+
 +(NSString *)stringWithTimestamp:(NSTimeInterval)tt format:(NSString *)format
 {
 	NSDate *date = [NSDate dateWithTimeIntervalSince1970:tt];

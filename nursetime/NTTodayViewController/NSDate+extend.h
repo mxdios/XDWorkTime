@@ -32,6 +32,7 @@
 - (NSInteger)day;
 - (NSInteger)month;
 - (NSInteger)year;
+- (NSInteger)week;
 
 /* 从时间戳获取特定格式的时间字符串 */
 + (NSString *)stringWithTimestamp:(NSTimeInterval)tt format:(NSString *)format;

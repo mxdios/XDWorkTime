@@ -57,5 +57,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册获取图片</string>
+	<key>NSCameraUsageDescription</key>
+	<string>访问相机完成拍照</string>
 </dict>
 </plist>

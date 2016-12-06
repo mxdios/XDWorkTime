@@ -9,10 +9,13 @@
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "NTTodayCalendarView.h"
+#import "NTWeekView.h"
+#import "UIView+Frame.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 {
     NTTodayCalendarView *_calendarView;
+    NTWeekView *_weekView;
 }
 @end
 
@@ -20,15 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-        
-//    _contentView = [[UIButton alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:_contentView];
-//    [_contentView addTarget:self action:@selector(openApp) forControlEvents:UIControlEventTouchUpInside];
-    
     
     _calendarView = [[NTTodayCalendarView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_calendarView];
+    
+    _weekView = [[NTWeekView alloc] initWithFrame:CGRectMake(0, 60, self.view.width, 60)];
+    _weekView.hidden = YES;
+    [self.view addSubview:_weekView];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openApp)];
     [_calendarView addGestureRecognizer:tap];
@@ -46,10 +47,15 @@
 - (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize
 {
     if (activeDisplayMode == NCWidgetDisplayModeCompact) {
-        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 100);
+        _weekView.hidden = NO;
+        _calendarView.height = 70;
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 120);
     } else {
-        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 400);
+        _weekView.hidden = YES;
+        _calendarView.height = 500;
+        self.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 350);
     }
+    _calendarView.clipsToBounds = YES;
 }
 //
 - (void)openApp

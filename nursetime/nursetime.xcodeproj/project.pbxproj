@@ -65,6 +65,7 @@
 		C216DA141DAA1B4D0079BF33 /* NSDate+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C216DA131DAA1B4D0079BF33 /* NSDate+extend.m */; };
 		C23C52C01BD8DBE20092C509 /* NTSelectDutyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C52BF1BD8DBE20092C509 /* NTSelectDutyView.m */; };
 		C23C52C31BD8DC030092C509 /* NTSelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C52C21BD8DC030092C509 /* NTSelectTimeView.m */; };
+		C26FB4141DF663AF00AF887F /* NTWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C26FB4131DF663AF00AF887F /* NTWeekView.m */; };
 		C29A731B1C213A240072EDB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29A731A1C213A240072EDB5 /* CoreLocation.framework */; };
 		C29A731D1C213A2D0072EDB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29A731C1C213A2D0072EDB5 /* Security.framework */; };
 		C29A731F1C213A360072EDB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29A731E1C213A360072EDB5 /* CoreGraphics.framework */; };
@@ -269,6 +270,8 @@
 		C23C52C11BD8DC030092C509 /* NTSelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSelectTimeView.h; sourceTree = "<group>"; };
 		C23C52C21BD8DC030092C509 /* NTSelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSelectTimeView.m; sourceTree = "<group>"; };
 		C26CF02A1DA8E1CA004B60DE /* nursetime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nursetime.entitlements; sourceTree = "<group>"; };
+		C26FB4121DF663AF00AF887F /* NTWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTWeekView.h; sourceTree = "<group>"; };
+		C26FB4131DF663AF00AF887F /* NTWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTWeekView.m; sourceTree = "<group>"; };
 		C29A731A1C213A240072EDB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C29A731C1C213A2D0072EDB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C29A731E1C213A360072EDB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -623,6 +626,8 @@
 				C2C6013F1DA8C9AF0074D5F0 /* TodayViewController.m */,
 				C216DA0C1DAA17660079BF33 /* NTTodayCalendarView.h */,
 				C216DA0D1DAA17660079BF33 /* NTTodayCalendarView.m */,
+				C26FB4121DF663AF00AF887F /* NTWeekView.h */,
+				C26FB4131DF663AF00AF887F /* NTWeekView.m */,
 				C2C601441DA8C9AF0074D5F0 /* Info.plist */,
 			);
 			path = NTTodayViewController;
@@ -1056,6 +1061,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26FB4141DF663AF00AF887F /* NTWeekView.m in Sources */,
 				C216DA141DAA1B4D0079BF33 /* NSDate+extend.m in Sources */,
 				C216DA111DAA188E0079BF33 /* UIView+Frame.m in Sources */,
 				C216DA0E1DAA17660079BF33 /* NTTodayCalendarView.m in Sources */,
@@ -1192,7 +1198,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1214,7 +1220,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = NTTodayViewController/NTTodayViewController.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				INFOPLIST_FILE = NTTodayViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1316,7 +1322,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = nursetime/nursetime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1342,7 +1348,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = nursetime/nursetime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Inspiry Technology Co.,Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 775V7Y38FR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
